@@ -174,7 +174,7 @@ function createReactiveEffect<T = any>(
         // 开启全局追踪开关
         enableTracking()
         effectStack.push(effect)
-        // 注意这里 将effect赋值给effect.ts预设的activeEffect 结合track一起看
+        // 注意这里 将effect赋值给effect.ts预设的activeEffect 结合track一起看更好理解
         activeEffect = effect
         // effect的回调函数执行，假如回调函数fn有取值Ref引用的value，从而触发RefImpl类get方法下的track追踪 activeEffect会添加进target对应的dep依赖
         return fn()
@@ -230,7 +230,7 @@ export function trigger(
   effects.forEach(run)
 }
 ```
-这是 <code>trigger</code> 方法的简单实现，主要逻辑还是比较简单的
+这是 <code>trigger</code> 方法的简单实现，其逻辑还是比较简单的
 ```ts
 // 调用set方法 => 调用trigger => 找出匹配的effect => 遍历执行
 count.value++ 
