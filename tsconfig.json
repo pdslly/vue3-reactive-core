@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node",
+    "target": "ES5",
+    "module": "ESNEXT",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "downlevelIteration": true,
+    "lib": ["DOM", "ESNEXT"]
+  },
+  "include": ["src/index.ts", "src/global.d.ts"]
+}
